@@ -41,6 +41,11 @@ void supplier() {
 			  (i == 9 ? ";" : ","));
 	}
 	left();
+	write("INSERT INTO mydb.supplier VALUES");
+	right();
+	for (int i = 1; i <= 10; ++i)
+		write("(\'"+(string)people_id[i]+"\')" + (i == 10 ? ";" : ","));
+	left();
 }
 
 void customer() {
