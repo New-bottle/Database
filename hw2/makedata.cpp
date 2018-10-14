@@ -82,7 +82,7 @@ void product() {
 			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
 			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
 				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
-				stock_quantity + "," + type + "),");
+				stock_quantity + ",\'" + type + "\'),");
 		}
 		type = "food";
 		for (int j = 1; j <= 4; ++j) {
@@ -91,7 +91,7 @@ void product() {
 			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
 			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
 				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
-				stock_quantity + "," + type + "),");
+				stock_quantity + ",\'" + type + "\'),");
 		}
 		type = "fun";
 		for (int j = 1; j <= 4; ++j) {
@@ -100,7 +100,7 @@ void product() {
 			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
 			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
 				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
-				stock_quantity + "," + type + "),");
+				stock_quantity + ",\'" + type + "\'),");
 		}
 	}
 	left();
