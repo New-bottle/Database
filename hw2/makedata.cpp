@@ -41,15 +41,6 @@ void supplier() {
 			  (i == 9 ? ";" : ","));
 	}
 	left();
-
-	write("INSERT INTO mydb.product VALUES");
-	right();
-	for (int i = 1; i <= 10; ++i) {
-		write("(\'" + people_id[people_tot] + "\',\'" + people_id[people_tot] + "\',\'" +
-			// rand date time
-			 );
-	}
-	left();
 }
 
 void customer() {
@@ -71,14 +62,58 @@ void customer() {
 	left();
 }
 
+string rand_date() {
+	return "DATE_ADD(now(), INTERVAL FLOOR(1+RAND() * 86400) SECOND)";
+}
+
+void product() {
+	write("");
+	write("# products");
+	write("INSERT INTO mydb.product VALUES");
+	right();
+	char unit_price[10], discount[10], stock_quantity[10];
+	string name = "a";
+
+	for (int i = 1; i <= 10; ++i) {
+		string type = "clothing";
+		for (int j = 1; j <= 4; ++j) {
+			name[0] = 'a' + i - 1;
+			sprintf(unit_price, "%d", rand() % 100);
+			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
+			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
+				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
+				stock_quantity + "," + type + "),");
+		}
+		type = "food";
+		for (int j = 1; j <= 4; ++j) {
+			name[0] = 'a' + i - 1;
+			sprintf(unit_price, "%d", rand() % 100);
+			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
+			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
+				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
+				stock_quantity + "," + type + "),");
+		}
+		type = "fun";
+		for (int j = 1; j <= 4; ++j) {
+			name[0] = 'a' + i - 1;
+			sprintf(unit_price, "%d", rand() % 100);
+			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
+			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
+				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
+				stock_quantity + "," + type + "),");
+		}
+	}
+	left();
+}
+
 int main() 
 {
 	ios::sync_with_stdio(false);
 	freopen("data.sql","w",stdout);
 	indent = "";
-//	puts("INSERT INTO");
 	supplier();
 	customer();
+	product();
 	for (auto iter = lst.begin(); iter != lst.end(); ++iter)
 		cout << *iter;
 	return 0;
