@@ -65,6 +65,12 @@ void customer() {
 			  (i == 99 ? ";" : ","));
 	}
 	left();
+	write("INSERT INTO mydb.customer VALUES");
+	right();
+	for (int i = 11; i <= 110; ++i) {
+		write("(\'" + (string)people_id[i] + "\'," + "0)" + (i == 110 ? ";" : ","));
+	}
+	left();
 }
 
 string rand_date() {
@@ -111,6 +117,28 @@ void product() {
 	left();
 }
 
+void vip() {
+	write("");
+	write("# vip");
+	write("INSERT INTO mydb.vip VALUES");
+	right();
+	char num[6];
+	for (int i = 0; i <= 100; ++i) {
+		sprintf(num, "%d", i);
+		write("(" + (string)num + ", 0.9),");
+	}
+	for (int i = 101; i <= 500; ++i) {
+		sprintf(num, "%d", i);
+		write("(" + (string)num + ", 0.8),");
+	}
+	for (int i = 501; i < 1000; ++i) {
+		sprintf(num, "%d", i);
+		write("(" + (string)num + ", 0.7),");
+	}
+	write("(1000, 0.7);");
+	left();
+}
+
 int main() 
 {
 	ios::sync_with_stdio(false);
@@ -119,6 +147,7 @@ int main()
 	supplier();
 	customer();
 	product();
+	vip();
 	for (auto iter = lst.begin(); iter != lst.end(); ++iter)
 		cout << *iter;
 	return 0;
