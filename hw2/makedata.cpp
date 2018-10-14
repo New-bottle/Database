@@ -91,6 +91,7 @@ void product() {
 			name[0] = 'a' + i - 1;
 			sprintf(unit_price, "%d", rand() % 100);
 			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
+			sprintf(stock_quantity, "%d", rand() % 100);
 			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
 				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
 				stock_quantity + ",\'" + type + "\'),");
@@ -100,6 +101,7 @@ void product() {
 			name[0] = 'a' + i - 1;
 			sprintf(unit_price, "%d", rand() % 100);
 			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
+			sprintf(stock_quantity, "%d", rand() % 100);
 			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
 				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
 				stock_quantity + ",\'" + type + "\'),");
@@ -109,6 +111,7 @@ void product() {
 			name[0] = 'a' + i - 1;
 			sprintf(unit_price, "%d", rand() % 100);
 			sprintf(discount, "%f", (rand() % 100) * 1.0 / 100.0);
+			sprintf(stock_quantity, "%d", rand() % 100);
 			write("(\'" + name + type + char('0'+j) + "\',\'" + people_id[i] + "\'," +
 				rand_date() + "," + rand_date() + "," + unit_price + "," + discount + "," +
 				stock_quantity + ",\'" + type + "\'),");
